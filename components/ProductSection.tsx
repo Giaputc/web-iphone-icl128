@@ -23,7 +23,7 @@ export default function ProductSection({
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const r = priceRanges.find((x) => x.id === range) ?? priceRanges[0];
+   const r = (priceRanges as any[]).find((x) => x.id === range) ?? priceRanges[0];
 
     let list = products.filter((p) => {
       const matchQ =
@@ -84,11 +84,7 @@ export default function ProductSection({
                 aria-label="Lọc theo giá"
                 className="rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200"
               >
-                {priceRanges.map((r) => (
-                  <option key={r.id} value={r.id}>
-                    {r.label}
-                  </option>
-                ))}
+               
               </select>
 
               <select
