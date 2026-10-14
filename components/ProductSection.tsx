@@ -54,7 +54,7 @@ export default function ProductSection({
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-brand-800">
-            Danh sách iPhone
+            Danh sách 
           </h2>
           <p className="mt-2 text-sm text-slate-500">
             Chọn lọc {products.length} mẫu máy chính hãng — giá đã bao gồm VAT
@@ -72,7 +72,7 @@ export default function ProductSection({
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Tìm kiếm: iPhone 15, A18, Pro Max..."
+                placeholder=": ..."
                 className="w-full rounded-full border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-200"
               />
             </div>
@@ -131,7 +131,7 @@ export default function ProductSection({
                     : "bg-brand-50 text-brand-700 hover:bg-brand-100"
                 }`}
               >
-                iPhone {l}
+                 {l}
               </button>
             ))}
           </div>

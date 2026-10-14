@@ -41,15 +41,15 @@ export default function AboutSection() {
               Về {shop.legalNameShort}
             </span>
             <h2 className="mt-4 text-3xl font-extrabold text-brand-800">
-              Cửa hàng iPhone uy tín
+              Cửa hàng uy tín
               <br />
               được hàng nghìn khách hàng tin chọn
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
               <b>{shop.legalName}</b> — tên tiếng Anh{" "}
               <b>{shop.legalNameForeign}</b> (MST {shop.mst}), thương hiệu{" "}
-              <b>{shop.brand}</b>, chuyên kinh doanh iPhone chính hãng fullbox
-              từ iPhone 12 đến iPhone 17. Trụ sở chính: {shop.address}. Chúng
+              <b>{shop.brand}</b>, chuyên kinh doanh  chính hãng fullbox
+              từ 12 đến17. Trụ sở chính: {shop.address}. Chúng
               tôi cam kết nguồn gốc minh bạch, giá bán rõ ràng và dịch vụ hậu
               mãi tận tâm — mọi máy đều được kiểm tra kỹ thuật 30 điểm trước
               khi bàn giao.

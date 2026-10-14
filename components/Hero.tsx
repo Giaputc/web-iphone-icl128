@@ -19,7 +19,7 @@ export default function Hero() {
             
           </span>
           <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">
-            Mua iPhone chính hãng
+            Mua  chính hãng
             <br />
             <span className="text-sky-200">giá tốt nhất 2026</span>
           </h1>
@@ -46,7 +46,7 @@ export default function Hero() {
           <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-white/10 shadow-2xl ring-1 ring-white/20">
             <SafeImage
               src="/images/iphone-17.jpg"
-              alt="iPhone 17 chính hãng"
+              alt=""
               fallbackLabel=""
               fill
               priority

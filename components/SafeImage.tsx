@@ -44,7 +44,7 @@ function placeholderDataUri(label: string): string {
  * (vd: chưa có file trong public/images), sẽ tự động hiển thị ảnh minh họa dự phòng.
  */
 export default function SafeImage({
-  fallbackLabel = "iPhone",
+  fallbackLabel = "",
   alt,
   ...props
 }: SafeImageProps) {
