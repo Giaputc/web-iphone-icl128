@@ -3,8 +3,8 @@ import { shop } from "@/lib/shop";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${shop.brand} — Cửa hàng bán iPhone chính hãng tại Hải Phòng`,
-  description: `Mua iPhone 12, 13, 14, 15, 16, 17 chính hãng giá tốt nhất. ${shop.legalName} (${shop.legalNameShort}) — ${shop.address}. Giao hàng toàn quốc, trả góp 0%, bảo hành 12 tháng.`,
+  title: `${shop.brand} — Cửa hàng chính hãng tại Hải Phòng`,
+  description: ` ${shop.legalName} (${shop.legalNameShort}) — ${shop.address}. Giao hàng toàn quốc, trả góp 0%, bảo hành 12 tháng.`,
   keywords: [
     "bán iPhone",
     "..",
