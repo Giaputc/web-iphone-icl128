@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import { formatVND } from "@/lib/products";
 import type { CartItem } from "@/lib/types";
 
@@ -147,9 +147,10 @@ export default function CartDrawer({
                       className="flex gap-3 rounded-2xl border border-brand-100 bg-white p-3"
                     >
                       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-brand-50">
-                        <Image
+                        <SafeImage
                           src={item.image}
                           alt={item.name}
+                          fallbackLabel={item.name}
                           fill
                           sizes="80px"
                           className="object-cover"

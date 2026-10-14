@@ -108,11 +108,11 @@ export default function ContactSection() {
                 <option value="" disabled>
                   Bạn quan tâm model nào?
                 </option>
-                <option>iPhone 17</option>
-                <option>iPhone 16</option>
-                <option>iPhone 15 series</option>
-                <option>iPhone 14 series</option>
-                <option>iPhone 13 / 12</option>
+                <option>...</option>
+                <option>...</option>
+                <option>...</option>
+                <option>...</option>
+                <option>....</option>
               </select>
               <button
                 type="submit"

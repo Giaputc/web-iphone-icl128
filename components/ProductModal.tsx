@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import type { Product } from "@/lib/types";
 import { formatVND } from "@/lib/products";
 
@@ -72,9 +72,10 @@ export default function ProductModal({
 
         <div className="grid gap-6 p-5 sm:p-6 md:grid-cols-2">
           <div className="relative aspect-square overflow-hidden rounded-2xl bg-brand-50">
-            <Image
+            <SafeImage
               src={product.image}
               alt={product.name}
+              fallbackLabel={product.name}
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"

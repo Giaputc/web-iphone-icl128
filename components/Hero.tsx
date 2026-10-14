@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 
 const highlights = [
   { icon: "🚚", title: "Giao hàng toàn quốc", desc: "Miễn phí ship đơn từ 500k" },
@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
         <div>
           <span className="inline-block rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold ring-1 ring-white/30">
-            ✨ Bộ đôi iPhone 17 vừa mở bán
+            
           </span>
           <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">
             Mua iPhone chính hãng
@@ -24,8 +24,7 @@ export default function Hero() {
             <span className="text-sky-200">giá tốt nhất 2026</span>
           </h1>
           <p className="mt-4 max-w-lg text-base text-blue-100 sm:text-lg">
-            Từ iPhone 12 đến iPhone 17 — đầy đủ màu sắc, bộ nhớ. Trả góp 0%,
-            giao nhanh trong 2 giờ tại nội thành.
+          
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
@@ -45,9 +44,10 @@ export default function Hero() {
 
         <div className="relative">
           <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-white/10 shadow-2xl ring-1 ring-white/20">
-            <Image
+            <SafeImage
               src="/images/iphone-17.jpg"
               alt="iPhone 17 chính hãng"
+              fallbackLabel=""
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -56,9 +56,9 @@ export default function Hero() {
           </div>
           <div className="absolute -bottom-4 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl bg-white px-5 py-4 text-center text-brand-900 shadow-xl sm:left-auto sm:right-0 sm:translate-x-0">
             <p className="text-xs font-semibold text-brand-600">
-              iPhone 17 256GB chỉ từ
+            
             </p>
-            <p className="text-2xl font-extrabold text-brand-800">22.990.000đ</p>
+            <p className="text-2xl font-extrabold text-brand-800"></p>
           </div>
         </div>
       </div>

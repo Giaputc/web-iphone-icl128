@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { formatVND } from "@/lib/products";
+import SafeImage from "./SafeImage";
 
 export default function ProductCard({
   product,
@@ -24,12 +24,13 @@ export default function ProductCard({
         onClick={() => onSelect(product)}
         className="relative block aspect-square w-full bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
       >
-        <Image
+        <SafeImage
           src={product.image}
           alt={product.name}
+          fallbackLabel={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition duration-300 group-hover:scale-105"
+          className="object-cover transition group-hover:scale-105"
         />
         <span className="absolute left-3 top-3 rounded-full bg-orange-500 px-2.5 py-1 text-xs font-bold text-white shadow">
           -{discount}%
@@ -42,18 +43,18 @@ export default function ProductCard({
       </button>
 
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-base font-bold text-slate-900">{product.name}</h3>
-        <p className="mt-1 line-clamp-2 text-xs text-slate-500">
-          {product.chip} · {product.screen}
-        </p>
+        <h3 className="text-base font-extrabold text-slate-900">
+          {product.name}
+        </h3>
+        <p className="mt-0.5 text-xs text-slate-500">{product.chip}</p>
 
-        <div className="mt-3">
-          <p className="text-lg font-extrabold text-brand-700">
+        <div className="mt-2 flex items-baseline gap-2">
+          <span className="text-lg font-extrabold text-brand-700">
             {formatVND(product.price)}
-          </p>
-          <p className="text-xs text-slate-400 line-through">
+          </span>
+          <span className="text-xs text-slate-400 line-through">
             {formatVND(product.originalPrice)}
-          </p>
+          </span>
         </div>
 
         <div className="mt-3 flex items-center gap-1.5">

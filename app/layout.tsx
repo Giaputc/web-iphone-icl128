@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description: `Mua iPhone 12, 13, 14, 15, 16, 17 chính hãng giá tốt nhất. ${shop.legalName} (${shop.legalNameShort}) — ${shop.address}. Giao hàng toàn quốc, trả góp 0%, bảo hành 12 tháng.`,
   keywords: [
     "bán iPhone",
-    "iPhone 17",
-    "iPhone 16",
-    "iPhone 15",
+    "..",
+    "..",
+    "..",
     "mua iPhone chính hãng",
     "iPhone Hải Phòng",
     shop.brand,

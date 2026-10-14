@@ -19,7 +19,7 @@ export default function Footer() {
             <span className="text-blue-200">{shop.legalNameForeign}</span> · MST{" "}
             {shop.mst}
             <br />
-            Cửa hàng iPhone chính hãng fullbox, bảo hành 12 tháng, trả góp 0%.
+           
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
             Danh mục sản phẩm
           </p>
           <ul className="mt-3 space-y-2 text-sm">
-            {["iPhone 17", "iPhone 16", "iPhone 15", "iPhone 14", "iPhone 13", "iPhone 12"].map(
+            {[].map(
               (l) => (
                 <li key={l}>
                   <a href="#san-pham" className="transition hover:text-white">
