@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+@theme {
+  /* Bảng màu — xanh dương làm chủ đạo, nền trắng */
+  --color-navy: #ffffff;
+  --color-navy2: #eff6ff;
+  --color-ink: #ffffff;
+  --color-gold: #2563eb;
+  --color-gold2: #dbeafe;
+  --color-gold3: #1d4ed8;
+  --color-accentlt: #93c5fd;
+  --color-text: #1f2937;
+  --color-mut: #64748b;
+  --color-line: rgba(37, 99, 235, 0.28);
+  --color-dark: #0d1117;
+  --color-ondark: #e5e7eb;
+  --color-onmut: #9ca3af;
+
+  --font-head: var(--font-oswald), "Impact", "Arial Narrow", sans-serif;
+  --font-body: var(--font-bevietnam), "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px));
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font: 400 16px/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dải an toàn notch phía trên (giữ như bản cũ) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: rgba(13, 17, 23, 0.94);
+  z-index: 30;
+}
+
+body.locked {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Text gradient (tiêu đề nhấn) */
+.text-grad {
+  background: linear-gradient(
+    180deg,
+    var(--color-gold2) 0%,
+    var(--color-gold) 45%,
+    var(--color-gold3) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Ẩn cho screen reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link */
+.skip {
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  background: var(--color-gold);
+  color: #fff;
+  font: 700 15px var(--font-body);
+  padding: 12px 24px;
+  border-radius: 0 0 6px 6px;
+  z-index: 40;
+  transition: top 0.2s;
+}
+.skip:focus {
+  top: 0;
+}
+
+/* Layout lưới Hero */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 290px) 1fr minmax(230px, 290px);
+  gap: 32px;
+  align-items: center;
+}
+.hero-grid > .hero-logo {
+  grid-column: auto;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.info-grid > div {
+  border-right: 1px solid var(--color-line);
+}
+.info-grid > div:last-child {
+  border-right: 0;
+}
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-logo {
+    width: min(320px, 80%);
+    margin-inline: auto;
+  }
+  .best {
+    max-width: 340px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 820px) {
+  .info-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+}
+
+/* Container */
+.wrap {
+  width: min(1160px, 92%);
+  margin-inline: auto;
+}
+
+/* Nút */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font: 700 15px var(--font-body);
+  border-radius: 4px;
+  border: 2px solid var(--color-gold);
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    background 0.2s;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-gold {
+  background: linear-gradient(180deg, var(--color-gold), var(--color-gold3));
+  color: #fff;
+  border-color: var(--color-gold3);
+}
+.btn-line {
+  background: transparent;
+  color: var(--color-gold);
+}
+.btn-line:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+.btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Lưới gói thuê */
+.pk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+/* Lưới điện thoại */
+.phones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+/* Lưới các bước quy trình */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0;
+  border: 1px solid var(--color-line);
+}
+.step {
+  padding: 30px 24px;
+  border-right: 1px solid var(--color-line);
+}
+.step:last-child {
+  border-right: 0;
+}
+@media (max-width: 820px) {
+  .step {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+}
+
+/* Lưới footer */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 36px;
+}
+@media (max-width: 820px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Keyframes ===== */
+@keyframes mq {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes sh {
+  to {
+    background-position: 0 100%;
+  }
+}
+@keyframes fl {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes pl {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
+  }
+}
+@keyframes bp {
+  50% {
+    transform: scale(1.18);
+  }
+}
+@keyframes ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 22px rgba(34, 197, 94, 0);
+  }
+}
+
+/* ===== Utilities ===== */
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: mq 30s linear infinite;
+}
+.anim-float {
+  animation: fl 5s ease-in-out infinite;
+}
+.anim-pulse-ring {
+  animation: pl 2.2s infinite;
+}
+.anim-bump {
+  animation: bp 0.35s;
+}
+.anim-ring {
+  animation: ring 1.6s infinite;
+}
+.shimmer-title {
+  background-size: 100% 220%;
+  animation: sh 3.5s ease-in-out infinite alternate;
+}
+
+/* Hiệu ứng hiện dần khi cuộn tới */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Mockup điện thoại vẽ bằng CSS */
+.shape {
+  width: 92px;
+  height: 176px;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  border: 4px solid #cbd5e1;
+  position: relative;
+  box-shadow: 0 12px 24px rgba(31, 41, 55, 0.25);
+  transition: transform 0.35s;
+}
+.shape::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 30px;
+  height: 7px;
+  margin-left: -15px;
+  background: #0a0f20;
+  border-radius: 6px;
+}
+.shape::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+.ph:hover .shape {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+/* Ngôi sao đánh giá */
+.stars {
+  color: #ffc83d;
+}
+
+/* Dấu + xoay khi mở FAQ */
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 40px 18px 0;
+  font: 700 18px var(--font-body);
+  position: relative;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 6px;
+  top: 12px;
+  font: 500 30px var(--font-head);
+  color: var(--color-gold);
+  transition: transform 0.25s;
+}
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+/* Ẩn spinner của input search trên Safari/Chrome */
+.srch input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .marquee-text {
+    padding-left: 0;
+  }
+}
